@@ -3,7 +3,7 @@ grep '^Z' cities.txt
 --Straightforward. Each line begins with Z thanks to ^.
 #2
 grep 'gan$' cities.txt
---Like the first problem, we ensure that each line is ending with 'gan' by using 4
+--Like the first problem, we ensure that each line is ending with 'gan' by using $
 #3
 grep -c '^A\|^D\|^E' cities.txt
 -- ^ forces each line to begin with the following character and | gives or possibilities
