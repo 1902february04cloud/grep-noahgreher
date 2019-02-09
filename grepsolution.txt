@@ -1,0 +1,32 @@
+#1
+grep '^Z' cities.txt
+--Straightforward. Each line begins with Z thanks to ^.
+#2
+grep 'gan$' cities.txt
+--Like the first problem, we ensure that each line is ending with 'gan' by using 4
+#3
+grep -c '^A\|^D\|^E' cities.txt
+-- ^ forces each line to begin with the following character and | gives or possibilities
+#4
+grep -c '\<.ar' cities.txt
+--It is important to note that for 22 results we must use \< instead of ^. 
+--Cities like 'Villa Maria' have 'ar' as its 2nd and 3rd letter but in the following word.
+#5
+grep -vc '^C' cities.txt
+--v basically gives the 'Not' version of a regular search
+#6	
+grep -E '[a-zA-Z,-]{14,}' cities.txt
+--{14,} covers our 'at least 14 character requirement.
+--the other step is to include all possible characters which we do with [a-zA-Z,-]
+#7
+grep -c '^B' cities.txt
+#8
+grep -o 'd' cities.txt | grep -c 'd'
+--I tried oc and co but
+--I am not sure why oc or co didn't work. The only solution for a working result was to pipe the process.
+#9
+grep -E '(.)\1+$' cities.txt
+--this took some research, but after figuring out the \1 syntax, it was fairly simple.
+#10
+grep -Ei '^(.)(.).\2\1+$' cities.txt
+--after understanding problem 9, 10 was quite simple.#1
